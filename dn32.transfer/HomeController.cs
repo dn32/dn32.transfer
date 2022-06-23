@@ -30,7 +30,7 @@ Arquivo: <input type='file' name='Arquivo'/>
     [HttpPost]
     public string Index(Model model)
     {
-        if (model?.Arquivo == null) return null;
+        if (model?.Arquivo == null) return "Arquivo veio vazio";
         if (model.Chave != "4lf0snk3wl5ovmbrcr4vs2rhzgjv5s") return "Chave inválida!";
 
         var nomeDoArquivo = ObterNomeUnicoDeArquivo(model.Arquivo.FileName);
